@@ -216,7 +216,7 @@ export default {
       login() { // Try not to edit or could break login 'system'
         console.log("login")
         axios
-          .post("http://localhost:9001/login", {username: this.username, password: this.password})
+          .post("http://leinad.pw:9001/login", {username: this.username, password: this.password})
           .then((response) => {
               // console.log(response.data.results[0].user_id)
               this.error = false
@@ -255,7 +255,7 @@ export default {
       },
       create() {
         axios
-          .post("http://localhost:9001/create", {username: this.username, password: this.password})
+          .post("http://leinad.pw:9001/create", {username: this.username, password: this.password})
           .then((response) => {
               this.createDialog = false
               console.log(response)

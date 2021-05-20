@@ -204,7 +204,7 @@ export default {
         if (this.moodNeutral) moods.push("neutral")
         if (this.moodSad) moods.push("sad")
         axios
-          .post("http://localhost:9001/moods", {moods: moods})
+          .post("http://leinad.pw:9001/moods", {moods: moods})
           .then((response) => {
               console.log(response)
               if (response.data.rtn.length > 0) {
@@ -242,7 +242,7 @@ export default {
         this.songToAdd = song
         this.playlistDialog = true
         axios
-          .post("http://localhost:9001/playlists", {userId: this.userId})
+          .post("http://leinad.pw:9001/playlists", {userId: this.userId})
           .then((response) => {
               // console.log(response)
               if (response.data.results.length > 0) {
@@ -268,7 +268,7 @@ export default {
       this.playlistDialog = false
 
       axios
-        .post("http://localhost:9001/playlist/getId", {name: this.currPlaylist, id: this.userId})
+        .post("http://leinad.pw:9001/playlist/getId", {name: this.currPlaylist, id: this.userId})
         .then((response) => {
             console.log(response.data.results)
             this.addToPlaylist(response.data.results[0].playlist_id, this.songToAdd.song_id)
@@ -280,7 +280,7 @@ export default {
     addToPlaylist(user_id, song_id) {
       console.log(user_id, song_id)
       axios
-        .post("http://localhost:9001/playlist/song/insert", {playlistId: user_id, songId: song_id})
+        .post("http://leinad.pw:9001/playlist/song/insert", {playlistId: user_id, songId: song_id})
         .then((response) => {
             console.log(response)
         })

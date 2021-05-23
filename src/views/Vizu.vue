@@ -48,7 +48,7 @@ export default {
   },
   mounted () {
     axios
-      .get("http://leinad.pw:9001/vizu/years")
+      .get("https://mood.leinad.pw/vizu/years")
       .then((response) => {
           // console.log(response.data.results)
           // let chartLabels = []

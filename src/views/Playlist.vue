@@ -184,7 +184,7 @@ export default {
     confirmCreate() {
       this.createDialog = false
       axios
-        .post("http://leinad.pw:9001/playlist/create", {userId: this.userId, name: this.newTitle})
+        .post("https://mood.leinad.pw/playlist/create", {userId: this.userId, name: this.newTitle})
         .then((response) => {
             console.log(response)
             this.$router.go()
@@ -196,7 +196,7 @@ export default {
     deleteSong(song) {
       // console.log(song)
       axios
-        .post("http://leinad.pw:9001/playlist/song/delete", {playlistId: this.id, songId: song.song_id})
+        .post("https://mood.leinad.pw/playlist/song/delete", {playlistId: this.id, songId: song.song_id})
         .then((response) => {
             console.log(response)
             this.getSongs(this.idx)
@@ -213,7 +213,7 @@ export default {
       this.deleteDialog = false
       console.log(this.id)
       axios
-        .post("http://leinad.pw:9001/playlist/delete", {id: this.id})
+        .post("https://mood.leinad.pw/playlist/delete", {id: this.id})
         .then((response) => {
             console.log(response)
             this.$router.go()
@@ -226,11 +226,11 @@ export default {
       this.idx = idx
       this.id = this.playlists[idx].playlist_id
       axios
-        .post("http://leinad.pw:9001/playlist/songs", {id: this.id})
+        .post("https://mood.leinad.pw/playlist/songs", {id: this.id})
         .then((response) => {
             // console.log(response.data.results)-
             axios
-              .post("http://leinad.pw:9001/playlist/stats", {id: this.id})
+              .post("https://mood.leinad.pw/playlist/stats", {id: this.id})
               .then((res) => {
                   console.log(res.data.results[0][0])
                   let tmp = res.data.results[0][0]
@@ -262,7 +262,7 @@ export default {
     },
     search() {
       axios
-        .post("http://leinad.pw:9001/playlists", {userId: this.userId})
+        .post("https://mood.leinad.pw/playlists", {userId: this.userId})
         .then((response) => {
             console.log(response)
             if (response.data.results.length > 0) {

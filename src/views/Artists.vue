@@ -269,7 +269,7 @@ export default {
       // console.log(this.searchForm.new_id.length > 0)
       this.emptyForm = !this.searchEdited
       axios
-        .post("http://leinad.pw:9001/artists/search", {search: this.searchForm, edited: this.searchEdited})
+        .post("https://mood.leinad.pw/artists/search", {search: this.searchForm, edited: this.searchEdited})
         .then((response) => {
             console.log(response)
             this.tableData = response.data.results
@@ -286,7 +286,7 @@ export default {
       this.insertDialog = false
       // insert API call to insert function
       axios
-        .post("http://leinad.pw:9001/artists/insert", {insert: this.insertForm})
+        .post("https://mood.leinad.pw/artists/insert", {insert: this.insertForm})
         .then((response) => {
             console.log(response)
         })
@@ -298,7 +298,7 @@ export default {
         console.log(item)
         this.editDialog = false
         axios
-          .post("http://leinad.pw:9001/artists/edit", {edit: this.editObject})
+          .post("https://mood.leinad.pw/artists/edit", {edit: this.editObject})
           .then((response) => {
               console.log(response)
           })
@@ -310,7 +310,7 @@ export default {
         this.confirmDeleteDialog = false
         console.log(this.deleteObject)
         axios
-          .delete("http://leinad.pw:9001/artists/delete", {data: {artist_id: this.deleteObject.artist_id, artist_name: this.deleteObject.artist_name}})
+          .delete("https://mood.leinad.pw/artists/delete", {data: {artist_id: this.deleteObject.artist_id, artist_name: this.deleteObject.artist_name}})
           .then((response) => {
               console.log(response);
               this.search();

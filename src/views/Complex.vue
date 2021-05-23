@@ -72,7 +72,7 @@ export default {
       this.searchForm.limit = this.searchForm.new_limit
 
       axios
-        .get(`http://leinad.pw:9001/complex/1`, {search: this.searchForm, edited: this.searchEdited})
+        .get(`https://mood.leinad.pw/complex/1`, {search: this.searchForm, edited: this.searchEdited})
         .then((response) => {
             console.log(response)
             this.tableData = response.data.results
@@ -94,7 +94,7 @@ export default {
       this.searchForm.limit = this.searchForm.new_limit
 
       axios
-        .get(`http://leinad.pw:9001/complex/2`, {search: this.searchForm, edited: this.searchEdited})
+        .get(`https://mood.leinad.pw/complex/2`, {search: this.searchForm, edited: this.searchEdited})
         .then((response) => {
             console.log(response)
             this.tableData = response.data.results
@@ -116,7 +116,7 @@ export default {
       this.searchForm.limit = this.searchForm.new_limit
 
       axios
-        .get(`http://leinad.pw:9001/complex/3`, {search: this.searchForm, edited: this.searchEdited})
+        .get(`https://mood.leinad.pw/complex/3`, {search: this.searchForm, edited: this.searchEdited})
         .then((response) => {
             console.log(response)
             this.tableData = response.data.results
@@ -138,7 +138,7 @@ export default {
       this.searchForm.limit = this.searchForm.new_limit
 
       axios
-        .get(`http://leinad.pw:9001/complex/4`, {search: this.searchForm, edited: this.searchEdited})
+        .get(`https://mood.leinad.pw/complex/4`, {search: this.searchForm, edited: this.searchEdited})
         .then((response) => {
             console.log(response)
             this.tableData = response.data.results

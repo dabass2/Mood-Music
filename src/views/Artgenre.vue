@@ -271,7 +271,7 @@ export default {
       this.emptyForm = !this.searchEdited
 
       axios
-        .post("http://leinad.pw:9001/artgenre/search", {search: this.searchForm, 
+        .post("https://mood.leinad.pw/artgenre/search", {search: this.searchForm, 
             edited: this.searchEdited, empty: this.emptyForm})
         .then((response) => {
             console.log(response)
@@ -289,7 +289,7 @@ export default {
       this.insertDialog = false
       // insert API call to insert function
       axios
-        .post("http://leinad.pw:9001/artgenre/insert", {insert: this.insertForm})
+        .post("https://mood.leinad.pw/artgenre/insert", {insert: this.insertForm})
         .then((response) =>
             {
                 console.log(response)
@@ -303,7 +303,7 @@ export default {
         console.log(this.editObject)
         this.editDialog = false
         axios
-          .post("http://leinad.pw:9001/artgenre/edit", {edit: this.editObject})
+          .post("https://mood.leinad.pw/artgenre/edit", {edit: this.editObject})
           .then((response) => {
               console.log(response)
           })
@@ -321,7 +321,7 @@ export default {
         this.confirmDeleteDialog = false
         console.log(this.deleteObject)
         axios
-           .delete("http://leinad.pw:9001/artgenre/delete", {data: {artist_id: 
+           .delete("https://mood.leinad.pw/artgenre/delete", {data: {artist_id: 
                 this.deleteObject.artist_id, genre_name:this.deleteObject.genre_name}})
            .then((response) => 
                 {console.log(response);

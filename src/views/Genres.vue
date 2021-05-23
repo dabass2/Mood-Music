@@ -217,7 +217,7 @@ export default {
       this.emptyForm = !this.searchEdited
 
       axios
-        .post("http://leinad.pw:9001/genres/search", {search: this.searchForm, edited: this.searchEdited, empty: this.emptyForm})
+        .post("https://mood.leinad.pw/genres/search", {search: this.searchForm, edited: this.searchEdited, empty: this.emptyForm})
         .then((response) => {
             console.log(response)
             this.tableData = response.data.results
@@ -234,7 +234,7 @@ export default {
       this.insertDialog = false
       // insert API call to insert function
       axios
-        .post("http://leinad.pw:9001/genres/insert", {insert: this.insertForm})
+        .post("https://mood.leinad.pw/genres/insert", {insert: this.insertForm})
         .then((response) => {
             console.log(response)
         })
@@ -246,7 +246,7 @@ export default {
         console.log(this.editObject)
         this.editDialog = false
         axios
-          .post("http://leinad.pw:9001/genres/edit", {edit: this.editObject})
+          .post("https://mood.leinad.pw/genres/edit", {edit: this.editObject})
           .then((response) => {
               console.log(response)
           })
@@ -258,7 +258,7 @@ export default {
         this.confirmDeleteDialog = false
         console.log(this.deleteObject.genre_name)
         axios
-          .delete("http://leinad.pw:9001/genres/delete", {data: {genre_name: this.deleteObject.genre_name}})
+          .delete("https://mood.leinad.pw/genres/delete", {data: {genre_name: this.deleteObject.genre_name}})
           .then((response) => {
               console.log(response);
               this.search();

@@ -191,13 +191,13 @@ export default {
         { title: 'Playlists', icon: 'mdi-playlist-music', link: "/playlist"},
         { title: 'Song Search', icon: 'mdi-magnify', link: "/search"},
         { title: 'Visualizations', icon: 'mdi-graph', link: "/vizu"},
-        { title: 'Complex Q\'s', icon: 'mdi-animation-play-outline', link: "/complex"}
       ],
       adminItems: [
         { title: 'Songs', icon: 'mdi-music-box-multiple', link: "/songs" },
         { title: 'Artist', icon: 'mdi-account-music', link: "/artists" },
         { title: 'Genre', icon: 'mdi-playlist-music', link: "/genres"},
         { title: 'Artist Genre', icon: 'mdi-album', link: "/artgenre"},
+        { title: 'Complex Q\'s', icon: 'mdi-animation-play-outline', link: "/complex"}
       ],
       loginDialog: false,
       createDialog: false,
@@ -216,7 +216,7 @@ export default {
       login() { // Try not to edit or could break login 'system'
         console.log("login")
         axios
-          .post("http://leinad.pw:9001/login", {username: this.username, password: this.password})
+          .post("https://mood.leinad.pw/login", {username: this.username, password: this.password})
           .then((response) => {
               // console.log(response.data.results[0].user_id)
               this.error = false
@@ -255,7 +255,7 @@ export default {
       },
       create() {
         axios
-          .post("http://leinad.pw:9001/create", {username: this.username, password: this.password})
+          .post("https://mood.leinad.pw/create", {username: this.username, password: this.password})
           .then((response) => {
               this.createDialog = false
               console.log(response)

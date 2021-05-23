@@ -360,7 +360,7 @@ export default {
       console.log(this.searchForm.new_year)
       this.emptyForm = !this.searchEdited
       axios
-        .post("http://leinad.pw:9001/songs/search", {search: this.searchForm, edited: this.searchEdited, empty: this.emptyForm})
+        .post("https://mood.leinad.pw/songs/search", {search: this.searchForm, edited: this.searchEdited, empty: this.emptyForm})
         .then((response) => {
             console.log(response)
             this.tableData = response.data.results
@@ -376,7 +376,7 @@ export default {
       console.log(this.insertForm)
       this.insertDialog = false
       axios
-        .post("http://leinad.pw:9001/songs/insert", {insert: this.insertForm})
+        .post("https://mood.leinad.pw/songs/insert", {insert: this.insertForm})
         .then((response) => {
             console.log(response)
         })
@@ -388,7 +388,7 @@ export default {
         console.log(this.editObject)
         this.editDialog = false
         axios
-          .post("http://leinad.pw:9001/songs/edit", {edit: this.editObject})
+          .post("https://mood.leinad.pw/songs/edit", {edit: this.editObject})
           .then((response) => {
               console.log(response)
           })
@@ -400,7 +400,7 @@ export default {
         this.confirmDeleteDialog = false
         console.log(this.deleteObject.song_id)
         axios
-          .delete("http://leinad.pw:9001/songs/delete", {data: {song_id: this.deleteObject.song_id, song_name: this.deleteObject.song_name}})
+          .delete("https://mood.leinad.pw/songs/delete", {data: {song_id: this.deleteObject.song_id, song_name: this.deleteObject.song_name}})
           .then((response) => {
               console.log(response);
               this.search()
